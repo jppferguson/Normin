@@ -1,0 +1,99 @@
+
+/* The grid
+ * ------------------------------------------------ */
+
+$columns: $gridColumns;
+$gutter: $gridGutter;
+
+
+* { -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ box-sizing: border-box; }
+
+.row {
+    margin: 0 auto;
+    @extend .clearfix;
+
+    .row  {
+        max-width: none;
+    }
+}
+
+.container {
+    margin: auto;
+    max-width: $large-desktop - 400;
+}
+
+@include breakpoint(large-desktop) {
+    .container {
+        max-width: ($large-desktop) - 300;
+    }
+}
+
+@include breakpoint(tablet-landscape-desktop) {
+    .container {
+        max-width: ($desktop) - 200;
+    }
+}
+@include breakpoint(tablet-portrait) {
+    .container {
+        max-width: none;
+        width: 90%;
+    }
+}
+
+
+
+.row {
+    [class*="col-"] {
+        float: left;
+        min-height: 1px;
+        &:first-child {
+            margin-left: 0;
+        }
+        @extend .clearfix;
+    }
+    &.columnset-3 {
+        [class*="col-"]:nth-child(3n + 1) {
+            margin-left: 0;
+        }
+    }
+}
+
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        width: columns($i);
+        margin: 0 0 $gutter $gutter;
+    }
+    [class*="col-"].push-#{$i} {
+        margin-left: columns($i) + $gutter * 2;
+    }
+    .first.push-#{$i} {
+        margin-left: columns($i) + $gutter;
+    }
+}
+
+
+@include breakpoint(phone) {
+    @for $i from 1 through $columns {
+        .row .col-#{$i} {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+
+.col-#{$gridColumns} {
+    margin-left: 0;
+}
+
+/* Show grid for demo purposes
+ * ------------------------------------------------ */
+
+// Show the grid for demos
+.show-grid [class*="col-"] {
+    background: #444;
+    color: #fff;
+    min-height: 20px;
+    text-align: center;
+}

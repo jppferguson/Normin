@@ -1,0 +1,18 @@
+
+/* Generic
+ * ------------------------------------------------ */
+
+html {
+	overflow-y: scroll;
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+	background-color: #fff;
+    min-height: 100%;
+}
+
+.container {
+    @extend .clearfix;
+}

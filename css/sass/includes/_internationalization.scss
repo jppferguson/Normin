@@ -1,0 +1,27 @@
+
+/* Internationalization
+ * ------------------------------------------------ */
+
+html,
+body {
+    direction: ltr;
+}
+bdo[dir="ltr"] {
+    unicode-bidi: bidi-override;
+    direction: ltr;
+}
+bdo[dir="rtl"] {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+*[dir="ltr"],
+*[lang="en"] {
+    text-align: left;
+    unicode-bidi: embed;
+    direction: ltr;
+} 
+*[dir="rtl"] {
+    text-align: right;
+    unicode-bidi: embed;
+    direction: rtl;
+}

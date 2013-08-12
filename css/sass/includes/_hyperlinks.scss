@@ -1,0 +1,36 @@
+
+/* Hyperlinks
+ * ------------------------------------------------ */
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	@include vendorize(transition, color 100ms ease-in-out);
+
+	&:hover {
+		text-decoration: underline;
+		img {
+			border-width: 1px;
+			border-style: solid;
+		}
+	}
+
+	&:visited {}
+
+	// &:active,
+	// &:focus {
+	// 	position: relative;
+	// 	top: 1px;
+	// }
+	img {
+		@include vendorize(transition, border 100ms ease-in-out);
+	}
+
+	&.text-link {
+		text-decoration: none;
+		&:hover {
+			border-bottom: 1px solid #ddd;
+			text-decoration: none;
+		}
+	}
+}

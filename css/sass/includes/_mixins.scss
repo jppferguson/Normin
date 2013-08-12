@@ -1,0 +1,68 @@
+
+/* Mixins
+ * ------------------------------------------------ */
+
+// Adds all vendor properties
+@mixin vendorize($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+
+// Calculate Grid Column Widths
+@function oneCol() {
+	@return (100% - ($gutter * ($columns - 1))) / $columns;
+}
+@function columns($num){
+	@return (oneCol() * $num) + ($gutter * ($num - 1)); // (One column * 'x') + (gutter * ('x' - 1)) = Column Width
+}
+
+// Font sizes
+@mixin font-size($size: 16, $line: 1) {
+    font-size: ($size) + px;
+    font-size: ($size/10) + rem;
+    line-height: $line;
+}
+
+// Responsiveness
+@mixin breakpoint($media) {
+  // Phone
+  @if $media == phone {
+    @media (max-width: $phone) {
+      @content;
+    }
+  }
+  // Tablet Portrait
+  @else if $media == tablet-portrait {
+    @media (max-width: $tablet-portrait) {
+      @content;
+    }
+  }
+  // Tablet Landscape - Desktop
+  @else if $media == tablet-landscape-desktop {
+    @media (min-width: ($tablet-portrait + 1) ) and (max-width: $desktop) {
+      @content;
+    }
+  }
+  // Large Desktop
+  @else if $media == large-desktop {
+    @media (min-width: ($desktop + 1) ) and (max-width: $large-desktop) {
+      @content;
+    }
+  }
+  // Non-Retina
+  @else if $media == non-retina {
+    @media screen and (-webkit-max-device-pixel-ratio: 1) {
+      @content;
+    }
+  }
+  // Retina Only
+  @else if $media == retina {
+    @media screen and (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+/*    _____________
+ *   / ___/ __/ __/
+ *  / /___\ \_\ \  
+ *  \___/___/___/  
+ *                
+ * normin.css
+ *
+ * A set of nice defaults
+ *
+ * This style has been created mainly by hand by Jamie Ferguson.
+ * Thanks for checking out the code!
+ *
+ * @project     normin
+ * @version     0.10
+ * @author      Jamie Ferguson <jppferguson.com>
+ * @date        May 2013
+ *
+ */
+
+@charset "utf-8";
+
+/*
+ * References & Variables
+ **********************************/
+
+
+// Colours
+$colorLink: #39c !default;
+
+// Layout
+$gridColumns: 12 !default;
+$gridGutter: 5% !default;
+
+// Responsive Breakpoints
+$phone: 480px !default;
+$tablet-portrait: 767px !default;
+$desktop:  1024px !default;
+$large-desktop: 1200px !default;
+
+// Border radius for form inputs
+$formBorderRadius: 4px !default;
+
+
+// base/
+//   - Sass imports and settings - no CSS output.
+//   - e.g _grid, _colors, _rhythm, etc.
+// general/
+//   - Initial CSS baseline with resets, defaults, font imports, and classes to extend.
+//   - e.g. _reset, _root, _fonts, _icons, _defaults, etc.
+// layout/
+//   - The rough outline of the site structure.
+//   - Not "layout" as a set of properties excluding type, "layout" as the overall site template which might well include typography. 
+//   - e.g. _banner, _nav, _main, _contentinfo, etc.
+// modules/
+//   - All the details. First by effect (classes/general), then by widget (ids/specifics).
+//   - e.g. _users, _admin, _product-lists etc.
+
+@import "compass/utilities/general";
+
+@import "includes/mixins";
+
+@import "includes/reset";
+
+@import "includes/normalize";
+
+@import "includes/generic";
+
+@import "includes/grid";
+
+@import "includes/typography";
+
+@import "includes/lists";
+
+@import "includes/hyperlinks";
+
+@import "includes/tables";
+
+@import "includes/forms";
+
+@import "includes/navigation";
+
+@import "includes/pagination";
+
+@import "includes/media";
+
+@import "includes/internationalization";
+
+@import "includes/attributes";
+//
+@import "includes/pseudo-classes";
+
+@import "includes/browsers";
+
+@import "includes/widgets";
+
+@import "includes/color";
+
+@import "includes/helpers";
+
+@import "includes/print";

@@ -1,0 +1,12 @@
+
+/* Pseudo-classes
+ * ------------------------------------------------ */
+::-moz-selection {
+    text-shadow: none;
+}
+::selection {
+    text-shadow: none;
+}
+::-webkit-input-placeholder {
+    line-height: normal;
+}

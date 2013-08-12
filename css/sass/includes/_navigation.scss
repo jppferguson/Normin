@@ -1,0 +1,53 @@
+
+/* Navigation
+ * ------------------------------------------------ */
+
+nav,
+.nav {
+    margin-bottom: 1em;
+
+    ul {
+        margin-bottom: 0;
+
+        li {
+            margin-right: 0;
+            margin-left: 0;
+            list-style: none;
+        }
+    }
+}
+
+
+.nav {
+
+    a {
+        display: block;
+        padding: .5em .75em;
+        border-radius: .25em;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:link:hover {
+            background: #eee;
+            border: none;
+        }
+    }
+
+    @extend .clearfix;
+}
+
+
+.nav-toggler {
+    display: block;
+    padding: .75em 1em .5em;
+    width: 3.75em;
+}
+.nav-bar {
+    margin-bottom: 3px;
+    border: 1px solid #aaa;
+    border-radius: 1em;
+    box-shadow: 0 1px 0 #fff;
+}
+.nav-responsive {
+    display: none;
+}
